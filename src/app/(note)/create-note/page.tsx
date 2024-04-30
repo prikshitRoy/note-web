@@ -1,7 +1,9 @@
+import Header from "@/components/header/header";
+
 export default function CreateNote() {
   return (
-    <>
-      <div>Create new note</div>
-    </>
+    <main>
+      <Header />
+    </main>
   );
 }

@@ -2,7 +2,10 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/router";
 import { ModeToggle } from "./ModeToggle";
+import { DotsVerticalIcon } from "@radix-ui/react-icons";
+import { UserOptionHeader } from "./UserOptionHeader";
 
 interface HeaderProps {
   className?: string;
@@ -10,6 +13,11 @@ interface HeaderProps {
 }
 
 export default function Header({ className, children }: HeaderProps) {
+  // Access the current path
+  /*   const router = useRouter();
+  const currentPath = router.pathname; */
+  const checkpath = true;
+
   return (
     <header
       className={cn(
@@ -22,7 +30,7 @@ export default function Header({ className, children }: HeaderProps) {
       {children}
       {/* Right side */}
       <div className="mr-2">
-        <ModeToggle />
+        {checkpath ? <UserOptionHeader /> : <ModeToggle />}
       </div>
     </header>
   );
